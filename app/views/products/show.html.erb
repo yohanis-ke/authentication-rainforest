@@ -1,0 +1,32 @@
+<section class="product-page">
+  <div class="product-wrapper">
+    <h1 class="product-name">
+      <%= @product.name %>
+      <span class="product-price">(<%= @product.price_in_dollars %>)</span>
+    </h1>
+
+    <p class="product-description"><%= @product.description %></p>
+
+    <%= link_to('Edit', edit_product_url(@product), class: 'btn-default') %>
+    <%= link_to('Delete', product_path(@product), class: 'btn-default', method: :delete, data: {confirm: "Are you sure you want to delete #{@product.name}? This cannot be undone!"}) %>
+  </div>
+
+  <div class="product-reviews">
+    <h2>Reviews (<%= @product.reviews.count %>)</h2>
+
+    <ul>
+      <% @product.reviews.each do |review| %>
+        <li class="review-user">
+          Anonymous posted on <%= review.created_at %>
+          (<%= link_to('Edit', edit_product_review_url(@product.id, review.id)) %>)
+        </li>
+        <li class="review-comment"><%= review.comment %></li>
+      <% end %>
+    </ul>
+  </div>
+
+  <section class="product-review-form">
+    <h4>New Review</h4>
+    <%= render 'reviews/form' %>
+  </section>
+</section>

@@ -1,0 +1,13 @@
+<section class="main-page">
+  <h1>List of all products</h1>
+
+  <% @products.each do |pro| %>
+    <ul class="product-wrapper">
+      <li class="product-name">
+        <%= link_to(pro.name, product_path(pro)) %>
+        <span class="product-price">(<%= pro.price_in_dollars %>)</span>
+      </li>
+      <li class="product-description"><%= pro.description %></li>
+    </ul>
+  <% end %>
+</section>

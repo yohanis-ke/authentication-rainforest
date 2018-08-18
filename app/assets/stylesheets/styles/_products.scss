@@ -1,0 +1,41 @@
+main {
+  padding: 0 0 400px;
+}
+
+.product-wrapper {
+  margin: 1.8em auto;
+  font-size: 1.4rem;
+
+  .product-name {
+    font-size: 1.6rem;
+  }
+
+  .product-description {
+    margin: 0.5rem auto;
+    font-size: 1.2rem;
+  }
+
+  .product-price {
+    font-size: 1.4rem;
+  }
+}
+
+.main-page {
+  .product-name {
+    a {
+      padding-right: 5px;
+    }
+  }
+}
+
+.product-page {
+  .product-price {
+    font-family: $f-sans;
+    color: $c-dark-orange;
+  }
+
+  .btn-default {
+    margin: 1em auto;
+    color: $c-white;
+  }
+}
